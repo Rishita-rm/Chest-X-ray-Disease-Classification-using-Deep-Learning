@@ -74,7 +74,7 @@ Using a **Convolutional Neural Network (CNN)**, this model learns from the COVID
 
 - Once the dataset is ready and the environment is set, you can start training the model by running the training cells in the notebook
 
-  ## 📊 **Project Results**
+## 📊 **Project Results**
 
 The model achieved an accuracy of **83%** after 2 epochs, and is expected to reach **85-90%** by the end of training.
 
@@ -88,4 +88,55 @@ plt.legend()
 plt.title('Accuracy Curves')
 plt.show()
 
-### **Accuracy vs Epochs (Training Progress)**
+```
+### **Loss vs Epochs (Training Progress)**
+
+```python
+plt.plot(history.history['loss'], label='train_loss')
+plt.plot(history.history['val_loss'], label='val_loss')
+plt.legend()
+plt.title('Loss Curves')
+plt.show()
+```
+
+## 🛠️ Key Features
+
+- Multi-Label Classification: Classifies chest X-rays into multiple categories based on the disease.
+- Data Augmentation: Used to increase dataset variability and reduce overfitting.
+- Transfer Learning (Optional): Fine-tuning pre-trained models (ResNet50, etc.) to improve accuracy.
+
+## 🚀 Deployment (Optional)
+
+- After training the model, you can easily deploy it using Flask API or FastAPI to create a web application where users can upload chest X-ray images and get the disease predictions.
+
+### **Steps for Deployment:**
+
+1. **Save the trained model**:
+
+   ```python
+   model.save('chest_xray_classifier.h5')
+   ```
+
+2. **Create a Flask API**:
+
+- Expose a RESTful endpoint where users can send POST requests with X-ray images.
+- Predict the disease using the trained model and return the results.
+
+## 📚 References
+
+- COVID-19 Radiography Database
+- Keras Documentation
+- TensorFlow Documentation
+
+## 🤝 Contributing
+- Feel free to fork this repository and submit pull requests for any improvements, bug fixes, or enhancements.
+
+## 📩 Contact
+For any questions, feel free to reach out to me at rishitamakkar0777@gmail.com.
+
+## End Notes
+- This project demonstrates a complete machine learning workflow from data processing to model training and deployment. It's a real-world AI application that you can showcase in your portfolio or use to showcase your machine learning skills in the healthcare field.
+
+   
+
+
